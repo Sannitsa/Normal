@@ -1,5 +1,7 @@
 package read.xml;
 
+import fix.roman.numbers.FixFile;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
@@ -220,14 +222,13 @@ public class Read_XML {
         return New;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void read(String Read, String Write) throws IOException {
         // scans
-        Scanner f = new Scanner(System.in);
-        System.err.println("File to read: ");
-        String Read = f.next();
-        System.err.println("File to write: ");
-        String Write = f.next();
+        /**Scanner ways = new Scanner(new File("ways.txt"));
+        String Read = ways.nextLine();
+        String Write = ways.nextLine();*/
         Scanner s = new Scanner(new File(Read));
+
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -302,6 +303,11 @@ public class Read_XML {
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         FILE = changeBadSymbols(FILE);
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        FILE = FixFile.fix(FILE);
+
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
